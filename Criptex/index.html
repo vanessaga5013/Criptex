@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criptex - El Misterio</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <header>
+            <h1>🔐 CRIPTEX</h1>
+            <p>Descifra la palabra secreta antes de que el mecanismo se bloquee.</p>
+        </header>
+
+        -- PANEL PARA CREAR LA PALABRA --
+        <section class="panel-configuracion">
+
+            <h2>⚙️ Configurar Criptex</h2>
+
+            <p>
+                Escribe la palabra que quieres ocultar y agrega algunas pistas.
+            </p>
+
+            <div class="formulario">
+
+                <label for="palabraSecreta">
+                    Palabra secreta:
+                </label>
+
+                <input
+                    type="text"
+                    id="palabraSecreta"
+                    maxlength="12"
+                    placeholder="Ejemplo: TESORO"
+                >
+
+                <label for="pista1">
+                    Pista 1:
+                </label>
+
+                <input
+                    type="text"
+                    id="pista1"
+                    placeholder="Primera pista..."
+                >
+
+                <label for="pista2">
+                    Pista 2:
+                </label>
+
+                <input
+                    type="text"
+                    id="pista2"
+                    placeholder="Segunda pista..."
+                >
+
+                <label for="pista3">
+                    Pista 3:
+                </label>
+
+                <input
+                    type="text"
+                    id="pista3"
+                    placeholder="Tercera pista..."
+                >
+
+                <button id="crearCriptex" class="boton-principal">
+                    🔒 CREAR CRIPTEX
+                </button>
+
+            </div>
+
+        </section>
+
+
+        -- ZONA DEL CRIPTEX --
+        <main id="zonaCriptex" class="oculto">
+
+            <div class="panel-superior">
+
+                <div>
+                    <span>INTENTOS</span>
+
+                    <div id="intentos">
+                        ★ ★ ★ ★ ★
+                    </div>
+                </div>
+
+                <div class="estado">
+                    ESTADO:
+                    <span id="estadoTexto">ACTIVO</span>
+                </div>
+
+            </div>
+
+
+            -- CRIPTEX --
+            <section class="criptex">
+
+                <div class="placa-superior">
+                    <span>◈</span>
+                    SISTEMA DE SEGURIDAD
+                    <span>◈</span>
+                </div>
+
+
+                <div id="ruedas" class="ruedas">
+                    <!-- Las ruedas se crean con JavaScript -->
+                </div>
+
+
+                <div class="placa-inferior">
+                    <span>Criptex • Alta Seguridad • Vane y Ruben</span>
+                </div>
+
+            </section>
+
+
+            ---- BOTÓN COMPROBAR --
+            <button id="comprobar" class="boton-desbloquear">
+                🔓 COMPROBAR COMBINACIÓN
+            </button>
+
+
+            -- PISTAS --
+            <section class="panel-pistas">
+
+                <h2>💡 PISTAS</h2>
+
+                <div id="listaPistas">
+
+                    <div class="pista bloqueada">
+                        🔒 Pista bloqueada
+                    </div>
+
+                    <div class="pista bloqueada">
+                        🔒 Pista bloqueada
+                    </div>
+
+                    <div class="pista bloqueada">
+                        🔒 Pista bloqueada
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            -- MENSAJE --
+            <div id="mensaje" class="mensaje"></div>
+
+        </main>
+
+    </div>
+
+
+    -- MODAL DE VICTORIA --
+    <div id="modalVictoria" class="modal">
+
+        <div class="modal-contenido">
+
+            <div class="icono-victoria">
+                🔓
+            </div>
+
+            <h2>¡Criptex DESBLOQUEADO!</h2>
+
+            <p>
+                Has descubierto correctamente la palabra secreta.
+            </p>
+
+            <div class="palabra-descubierta" id="palabraDescubierta">
+                TESORO
+            </div>
+
+            <button id="cerrarVictoria">
+                CONTINUAR
+            </button>
+
+        </div>
+
+    </div>
+
+
+    -- MODAL DE BLOQUEO --
+    <div id="modalBloqueo" class="modal">
+
+        <div class="modal-contenido bloqueo">
+
+            <div class="icono-bloqueo">
+                ⚠️
+            </div>
+
+            <h2>Criptex BLOQUEADO</h2>
+
+            <p>
+                Has utilizado los 5 intentos disponibles.
+            </p>
+
+            <div class="tinta">
+                <span>████████████</span>
+                <span>████████████</span>
+                <span>████████████</span>
+            </div>
+
+            <p>
+                La tinta de seguridad ha cubierto la palabra secreta.
+            </p>
+
+            <button id="reiniciar">
+                🔄 NUEVO CRIPTEX
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
